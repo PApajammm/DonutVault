@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="Your personal home for the anime, films, and series you watch.">
+    <title>Dashboard | DonutVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="DonutVault dashboard">
+          <img class="brand__logo" src="logo.jfif" alt="">
+          <span class="brand__name">Donut<span>Vault</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="primary-nav__link primary-nav__link--active" href="index.html" aria-current="page">Dashboard</a>
+          <a class="primary-nav__link" href="library.html">Watch Library</a>
+          <a class="primary-nav__link" href="history.html">Watch History</a>
+        </nav>
+        <a class="button button--primary header-action" href="add-title.html">
+          <span aria-hidden="true">+</span> Add Title
+        </a>
+      </header>
+
+      <main class="dashboard-main">
+        <section class="welcome" aria-labelledby="welcome-title">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__dot"></span> YOUR PERSONAL WATCH ARCHIVE</p>
+            <h1 id="welcome-title">Your stories,<br><span>all in one place.</span></h1>
+            <p class="welcome__copy">Keep track of what you've watched and the stories still waiting for you.</p>
+          </div>
+          <a class="button button--quiet welcome__link" href="library.html">
+            Explore your library <span aria-hidden="true">↗</span>
+          </a>
+        </section>
+
+        <section class="stats-grid" aria-label="Collection summary">
+          <article class="stat-card">
+            <span class="stat-card__label">TOTAL TITLES</span>
+            <strong class="stat-card__value" data-stat="total">0</strong>
+            <span class="stat-card__detail">in your collection</span>
+            <span class="stat-card__mark stat-card__mark--total" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">COMPLETED</span>
+            <strong class="stat-card__value" data-stat="completed">0</strong>
+            <span class="stat-card__detail">stories finished</span>
+            <span class="stat-card__mark stat-card__mark--complete" aria-hidden="true"></span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">CURRENTLY WATCHING</span>
+            <strong class="stat-card__value" data-stat="watching">0</strong>
+            <span class="stat-card__detail">in progress</span>
+            <span class="stat-card__mark stat-card__mark--watching" aria-hidden="true"></span>
+          </article>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="panel recent-panel" aria-labelledby="recent-title">
+            <div class="panel__heading">
+              <div>
+                <p class="eyebrow eyebrow--small">YOUR COLLECTION</p>
+                <h2 id="recent-title">Recently added</h2>
+              </div>
+              <a class="text-link" href="library.html">View library <span aria-hidden="true">→</span></a>
+            </div>
+            <div id="recent-empty" class="empty-state">
+              <div class="empty-state__icon" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <h3>Your collection starts here</h3>
+              <p>When you add a title, it'll show up here so you can easily pick up where you left off.</p>
+              <a class="button button--outline" href="add-title.html">Add your first title</a>
+            </div>
+            <div id="recent-list" class="recent-list" hidden></div>
+            <p id="dashboard-error" class="library-error" role="alert" hidden></p>
+          </section>
+
+          <aside class="library-card" aria-labelledby="library-card-title">
+            <div class="library-card__topline">
+              <span class="library-card__icon" aria-hidden="true">◷</span>
+              <span class="library-card__label">A LITTLE SPACE FOR EVERY STORY</span>
+            </div>
+            <div>
+              <h2 id="library-card-title">Make it yours.</h2>
+              <p>Build a personal archive of the shows and films you love, one title at a time.</p>
+              <p class="storage-note">Your collection is saved in this browser on this device. It won't automatically sync across devices.</p>
+            </div>
+            <a class="library-card__link" href="library.html">Go to watch library <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span>DONUTVAULT</span>
+        <span>YOUR STORIES, THOUGHTFULLY KEPT</span>
+      </footer>
+    </div>
+  </body>
+</html>

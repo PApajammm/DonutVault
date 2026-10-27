@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="Browse and organize your personal watch collection.">
+    <title>Watch Library | DonutVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/import-export.js" defer></script>
+    <script src="js/library.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="DonutVault dashboard">
+          <img class="brand__logo" src="logo.jfif" alt="">
+          <span class="brand__name">Donut<span>Vault</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="primary-nav__link" href="index.html">Dashboard</a>
+          <a class="primary-nav__link primary-nav__link--active" href="library.html" aria-current="page">Watch Library</a>
+          <a class="primary-nav__link" href="history.html">Watch History</a>
+        </nav>
+        <a class="button button--primary header-action" href="add-title.html">
+          <span aria-hidden="true">+</span> Add Title
+        </a>
+      </header>
+
+      <main class="library-main">
+        <section class="library-heading" aria-labelledby="library-title">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__dot"></span> YOUR PERSONAL COLLECTION</p>
+            <h1 id="library-title">Watch <span>Library</span></h1>
+            <p class="library-heading__copy">All the stories on your watchlist, gathered in one place.</p>
+          </div>
+          <div class="library-heading__actions">
+            <button id="export-collection" class="button button--outline" type="button">Export JSON</button>
+            <button id="choose-import" class="button button--outline" type="button">Import JSON</button>
+            <input id="import-file" type="file" accept=".json,application/json" hidden tabindex="-1" aria-hidden="true">
+            <a class="button button--primary" href="add-title.html"><span aria-hidden="true">+</span> Add Title</a>
+          </div>
+        </section>
+
+        <p class="storage-notice">Your collection is stored in this browser on this device and does not automatically sync across devices.</p>
+        <p id="transfer-feedback" class="action-feedback" role="status" hidden></p>
+
+        <section class="library-toolbar" aria-label="Search and filter titles">
+          <label class="search-field">
+            <span class="search-field__icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Search titles</span>
+            <input id="title-search" type="search" placeholder="Search your library..." autocomplete="off">
+          </label>
+          <label class="filter-field">
+            <span class="visually-hidden">Filter by category</span>
+            <select id="category-filter">
+              <option value="">All categories</option>
+              <option>Anime Series</option>
+              <option>Anime Movies</option>
+              <option>English Movies</option>
+              <option>Tagalog Movies</option>
+              <option>Other Series</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span class="visually-hidden">Filter by status</span>
+            <select id="status-filter">
+              <option value="">All statuses</option>
+              <option>Plan to Watch</option>
+              <option>Currently Watching</option>
+              <option>Completed</option>
+              <option>On Hold</option>
+              <option>Dropped</option>
+            </select>
+          </label>
+          <label class="filter-field filter-field--sort">
+            <span class="visually-hidden">Sort titles</span>
+            <select id="sort-order">
+              <option value="recent">Recently added</option>
+              <option value="title">Title: A to Z</option>
+              <option value="rating">Rating: high to low</option>
+            </select>
+          </label>
+        </section>
+
+        <p id="library-count" class="library-count" aria-live="polite"></p>
+        <section id="title-grid" class="title-grid" aria-label="Titles in your library"></section>
+        <p id="library-feedback" class="action-feedback" role="status" hidden></p>
+        <section id="library-empty" class="library-empty" aria-live="polite" hidden>
+          <div class="empty-state__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h2 id="empty-title"></h2>
+          <p id="empty-copy"></p>
+          <a id="empty-action" class="button button--outline" href="add-title.html"></a>
+          <button id="clear-filters" class="button button--outline" type="button" hidden>Clear search and filters</button>
+        </section>
+        <p id="library-error" class="library-error" role="alert" hidden></p>
+      </main>
+
+      <footer class="site-footer">
+        <span>DONUTVAULT</span>
+        <span>YOUR STORIES, THOUGHTFULLY KEPT</span>
+      </footer>
+    </div>
+  </body>
+</html>

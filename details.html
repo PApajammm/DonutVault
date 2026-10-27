@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="View details about a title in your personal watch archive.">
+    <title>Title Details | DonutVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/details.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="DonutVault dashboard">
+          <img class="brand__logo" src="logo.jfif" alt="">
+          <span class="brand__name">Donut<span>Vault</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="primary-nav__link" href="index.html">Dashboard</a>
+          <a class="primary-nav__link" href="library.html">Watch Library</a>
+          <a class="primary-nav__link" href="history.html">Watch History</a>
+        </nav>
+        <a class="button button--primary header-action" href="add-title.html">
+          <span aria-hidden="true">+</span> Add Title
+        </a>
+      </header>
+
+      <main class="details-main">
+        <a class="back-link" href="library.html"><span aria-hidden="true">←</span> Back to library</a>
+        <p id="details-error" class="library-error" role="alert" hidden></p>
+        <article id="title-details" class="details-card" hidden>
+          <div class="details-card__poster" id="details-poster"></div>
+          <div class="details-card__content">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> TITLE DETAILS</p>
+            <p class="details-card__category" id="details-category"></p>
+            <h1 id="details-title"></h1>
+            <div class="details-card__status">
+              <span class="status-badge" id="details-status"></span>
+              <span id="details-year" class="details-card__year"></span>
+              <span id="details-rating" class="title-card__rating"></span>
+            </div>
+            <dl class="details-metadata">
+              <div>
+                <dt>Started watching</dt>
+                <dd id="details-start-date"></dd>
+              </div>
+              <div>
+                <dt>Finished watching</dt>
+                <dd id="details-finish-date"></dd>
+              </div>
+            </dl>
+            <section id="details-notes-section" class="details-notes" hidden>
+              <h2>Personal notes</h2>
+              <p id="details-notes"></p>
+            </section>
+            <div class="details-actions">
+              <a id="details-edit" class="button button--primary" href="#">Edit title</a>
+              <button id="details-delete" class="button button--danger" type="button">Delete title</button>
+            </div>
+            <p id="details-feedback" class="action-feedback" role="status" hidden></p>
+          </div>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <span>DONUTVAULT</span>
+        <span>YOUR STORIES, THOUGHTFULLY KEPT</span>
+      </footer>
+    </div>
+  </body>
+</html>

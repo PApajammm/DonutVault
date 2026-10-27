@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="Look back at the titles you have completed.">
+    <title>Watch History | DonutVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/storage.js" defer></script>
+    <script src="js/history.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="DonutVault dashboard">
+          <img class="brand__logo" src="logo.jfif" alt="">
+          <span class="brand__name">Donut<span>Vault</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="primary-nav__link" href="index.html">Dashboard</a>
+          <a class="primary-nav__link" href="library.html">Watch Library</a>
+          <a class="primary-nav__link primary-nav__link--active" href="history.html" aria-current="page">Watch History</a>
+        </nav>
+        <a class="button button--primary header-action" href="add-title.html">
+          <span aria-hidden="true">+</span> Add Title
+        </a>
+      </header>
+
+      <main class="history-main">
+        <section class="library-heading" aria-labelledby="history-title">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__dot"></span> YOUR WATCHING JOURNEY</p>
+            <h1 id="history-title">Watch <span>History</span></h1>
+            <p class="library-heading__copy">A look back at the stories you've finished.</p>
+          </div>
+          <a class="button button--outline" href="library.html">Browse library</a>
+        </section>
+
+        <p id="history-count" class="library-count" aria-live="polite"></p>
+        <section id="history-list" class="history-list" aria-label="Completed titles"></section>
+        <section id="history-empty" class="library-empty" aria-live="polite" hidden>
+          <div class="empty-state__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h2 id="history-empty-title"></h2>
+          <p id="history-empty-copy"></p>
+          <a id="history-empty-action" class="button button--outline" href="library.html">Explore your library</a>
+        </section>
+        <p id="history-error" class="library-error" role="alert" hidden></p>
+      </main>
+
+      <footer class="site-footer">
+        <span>DONUTVAULT</span>
+        <span>YOUR STORIES, THOUGHTFULLY KEPT</span>
+      </footer>
+    </div>
+  </body>
+</html>
